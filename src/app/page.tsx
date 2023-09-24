@@ -11,13 +11,13 @@ import { useRouter } from "next/navigation";
 //========================================================================================================
 import { headers } from 'next/headers'
 import { DataType, TaskType } from '@/components/temp'
-import TasksDisplay from '@/components/Tasks'
-import NoTasks from '@/components/NoTasks'
-import ProgressButton from '@/components/ProgressButton'
+import TasksDisplay from '@/components/tasks'
+import NoTasks from '@/components/no-tasks'
+import ProgressButton from '@/components/progress-button'
 import Image from 'next/image'
 import { ToLocalTime, getLeastDeadline } from '@/components/utils/utillities'
-import UserBar from "@/components/UserBar"
-import SideBar from "@/components/SideBar";
+import UserBar from "@/components/user-bar"
+import SideBar from "@/components/side-bar";
 //========================================================================================================
 
 
@@ -35,7 +35,7 @@ export default function Home() {
             }
         };
         fetchSession();
-    }, []);
+    }, [router]);
     const mail = useSelector((state: RootState) => state.auth.email);
 
 
@@ -47,11 +47,11 @@ export default function Home() {
         user: "Ajay Sweetson Raja",
         tasks: [
             {
-                name: "To check the Maggots",
-                desc: "Check the Development of Maggots in -1 degree Celcius",
+                name: "Innovative Presentation",
+                desc: "Dr. Rama Sivakumar",
                 creation: "2023-02-01T12:23:40.000Z",
                 completion: "",
-                deadline: "2023-12-25T12:30:00.000Z",
+                deadline: "2023-09-26T12:30:00.000Z",
                 comments: [
                     "Try with Concenterated Hydrochloric Acid",
                     "Check Movements"
@@ -61,6 +61,84 @@ export default function Home() {
                     "part2": true,
                     "part3": true,
                     "part5": false
+                },
+                reminder: false
+            },
+            {
+                name: "Project Work",
+                desc: "Mr. B. Karthikeyan",
+                creation: "2023-06-01T12:23:40.000Z",
+                completion: "",
+                deadline: "2024-03-12T12:30:00.000Z",
+                comments: [
+                    "Try with Concenterated Hydrochloric Acid",
+                    "Check Movements"
+                ],
+                milestones: {
+                    "part1": true,
+                    "part2": true,
+                    "part3": true,
+                    "part4": true,
+                    "part5": true,
+                    "part6": false
+                },
+                reminder: false
+            },
+            {
+                name: "Getting Signature in Lab Manual",
+                desc: "Dr. M.P.Anuradha",
+                creation: "2023-02-01T12:23:40.000Z",
+                completion: "",
+                deadline: "2024-01-21T12:30:00.000Z",
+                comments: [
+                    "Try with Concenterated Hydrochloric Acid",
+                    "Check Movements"
+                ],
+                milestones: {
+                    "part1": true,
+                    "part2": true,
+                    "part3": false,
+                    "part4": false,
+                    "part5": false,
+                    "part6": false
+                },
+                reminder: false
+            },
+            {
+                name: "Scrap Book Creation",
+                desc: "Mrs. Arthy Priya",
+                creation: "2023-02-01T12:23:40.000Z",
+                completion: "",
+                deadline: "2023-10-16T12:30:00.000Z",
+                comments: [
+                    "Try with Concenterated Hydrochloric Acid",
+                    "Check Movements"
+                ],
+                milestones: {
+                    "part1": true,
+                    "part2": true,
+                    "part3": true,
+                    "part4": true,
+                },
+                reminder: false
+            },
+            {
+                name: "Assignment Submission",
+                desc: "Mrs. Bhuvaneshwari",
+                creation: "2023-09-01T12:23:40.000Z",
+                completion: "",
+                deadline: "2023-11-27T12:30:00.000Z",
+                comments: [
+                    "Try with Concenterated Hydrochloric Acid",
+                    "Check Movements"
+                ],
+                milestones: {
+                    "part1": true,
+                    "part2": true,
+                    "part3": true,
+                    "part4": true,
+                    "part5": false,
+                    "part6": false
                 },
                 reminder: false
             }
@@ -100,8 +178,8 @@ export default function Home() {
             <div>
                 <SideBar />
             </div>
-            <div className='w-[70vw]'>
-                <h1 className='bg-[#f7f9fa] px-7 py-5 leading-8 w-[70vw] flex justify-between'>
+            <div className='w-[74vw]'>
+                <h1 className='bg-[#f7f9fa] px-24 py-5 leading-8 w-[74vw] flex justify-between'>
                     <div>
                         <span className='text-4xl font-bold'>{greeting}!</span><br></br>
                         <span className='text-md font-medium text-[#a7a9d2]'>Here is your List of Tasks <span className='text-[#4B50F7]'>{User}</span></span>

@@ -1,7 +1,7 @@
 import Completed from "../../public/Completed.svg"
 import Image from "next/image"
-import Calendar from "./Calandar"
-import Quotes from "./utils/Quotes"
+import Calendar from "./calendar"
+import Quotes from "./utils/quotes"
 import Link from "next/link"
 import { FormatDate } from "./utils/utillities"
 type Props = { date: Date | null }

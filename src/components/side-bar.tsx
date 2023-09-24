@@ -9,7 +9,7 @@ import Link from "next/link"
 export default function SideBar() {
     return (
         <>
-            <div className="flex flex-col bg-[#f3f4f8] p-6 justify-between h-[100vh]">
+            <div className="flex flex-col bg-[#f3f4f8] p-6 justify-between h-[100vh] fixed w-[5vw]">
                 <div>
                     <Image src={Logo} alt="logo" width={35}></Image>
                 </div>
